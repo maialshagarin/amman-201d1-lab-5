@@ -9,14 +9,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-    var c = a+b
-    var resultstring = 'The sum of '+ a + ' and ' +b + ' is '+ c + '.';
+    var c = a + b
+    var resultstring = 'The sum of ' + a + ' and ' + b + ' is ' + c + '.';
     console.log(resultstring);
-return [ c ,  resultstring ];
+    return [c, resultstring];
 }
 
 // Here is the test for sum(); uncomment it to run it
- testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -30,20 +30,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-var c = a*b
-var result = 'The product of ' + a + " and " + b + ' is ' + c +'.'
-console.log (result);
-return [ c ,result]
+    var c = a * b
+    var result = 'The product of ' + a + " and " + b + ' is ' + c + '.'
+    console.log(result);
+    return [c, result]
 }
 
 // Here is the test for multiply(); uncomment it to run it
- testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 3
-Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
+Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array
+ where the first element is the sum of those three numbers, the second element is the product of those three numbers,
+ 
+ and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input
+  into the function:
 
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
@@ -54,11 +58,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+    var firstSum = sum(a, b);
+    var secondsum = sum(firstSum[0], c);
+    var firstmultiply = multiply(a, b);
+    var secondmultiply = multiply(firstmultiply[0], c);
+
+    return [secondsum[0], secondmultiply[0],
+    a + ' and ' + b + ' and ' + c + ' sum to ' + secondsum[0] + '.',
+    "The product of " + a + " and " + b + " and " + c + " is " + secondmultiply[0]+"."]
 
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -122,7 +134,7 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
